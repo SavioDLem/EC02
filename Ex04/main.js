@@ -118,20 +118,20 @@ function atualizartabela(){
 
 function listarSalariosMaiores5000() {
     let lista = funcionarios.filter(f => f.getSalario() > 5000);
-    document.getElementById("relatorios").innerHTML = `<p>Salários acima de R$5000: </p>${lista.map(f => f.toString()).join("<br/>")}`;
+    document.getElementById("relatorio").innerHTML = `<p>Salários acima de R$5000: </p>${lista.map(f => f.toString()).join("<br/>")}`;
 }
 
 function calcularMediaSalarial() {
     let media = funcionarios.reduce((sum, f) => sum + f.getSalario(), 0) / funcionarios.length || 0;
-    document.getElementById("relatorios").innerHTML = `<p>Média Salarial: R$${media.toFixed(2)}</p>`;
+    document.getElementById("relatorio").innerHTML = `<p>Média Salarial: R$${media.toFixed(2)}</p>`;
 }
 
 function listarCargosUnicos() {
     let cargos = [...new Set(funcionarios.map(f => f.getCargo()))];
-    document.getElementById("relatorios").innerHTML = `<p>Cargos únicos: </p>${cargos.join("</br>")}`;
+    document.getElementById("relatorio").innerHTML = `<p>Cargos únicos: </p>${cargos.join("</br>")}`;
 }
 
 function listarNomesMaiusculos() {
     let nomes = funcionarios.map(f => f.getNome().toUpperCase());
-    document.getElementById("relatorios").innerHTML = `<p>Nomes em Maiúsculo: </p>${nomes.join("</br>")}`;
+    document.getElementById("relatorio").innerHTML = `<p>Nomes em Maiúsculo: </p>${nomes.join("</br>")}`;
 }
